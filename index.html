@@ -16,13 +16,15 @@
           <div id="unity-progress-bar-full"></div>
         </div>
       </div>
-      <div id="unity-mobile-warning">
-		
-      </div>
       <div id="unity-footer">
-        <div id="unity-webgl-logo"></div>
-        <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">Discover Desolates</div>
+        <div id="unity-fullscreen-button">
+			<div class=".parent">
+			<div  class="fullscreenText"><p>
+			FullScreen
+			</p>
+			</div>
+			
+		</div>
       </div>
     </div>
     <script>
@@ -57,7 +59,7 @@
       } else {
 	  console.log('desktop');
 	  var div = document.getElementById("unity-footer");
-	  div.style.display = "none"; 
+	  //div.style.display = "none"; 
       }
 		
        canvas.style.width = "375px";
