@@ -51,15 +51,26 @@
       // happening inside the engine, and you would instead like to size up
       // the canvas DOM size and WebGL render target sizes yourself.
       // config.matchWebGLToCanvasSize = false;
-		
-      
-	  var screenWidth = screen.width;
+		if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        var screenWidth = screen.width;
+		var screenHeight = screen.height;
+	  
+	  
+	  
+	  canvas.style.width = screenHeight +"px";
+      canvas.style.height = screenWidth +"px";
+        }, 5000);
+      } else {
+        var screenWidth = screen.width;
 	  var screenHeight = screen.height;
 	  
 	  
 	  
 	  canvas.style.width = screenWidth +"px";
       canvas.style.height = screenHeight +"px";
+      }
+      
+	  
       loadingBar.style.display = "block";
 
       var script = document.createElement("script");
