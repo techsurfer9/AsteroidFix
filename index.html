@@ -26,6 +26,14 @@
       </div>
     </div>
     <script>
+	
+      var canvas = document.querySelector("#unity-canvas");
+		if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+            unityInstance.SetFullscreen(1);
+      } else {
+        canvas.style.width = "375px";
+        canvas.style.height = "812px";
+      }
       var buildUrl = "Build";
       var loaderUrl = buildUrl + "/DiscoverDesolates.loader.js";
       var config = {
@@ -39,7 +47,6 @@
       };
 
       var container = document.querySelector("#unity-container");
-      var canvas = document.querySelector("#unity-canvas");
       var loadingBar = document.querySelector("#unity-loading-bar");
       var progressBarFull = document.querySelector("#unity-progress-bar-full");
       var fullscreenButton = document.querySelector("#unity-fullscreen-button");
@@ -52,12 +59,7 @@
       // the canvas DOM size and WebGL render target sizes yourself.
       // config.matchWebGLToCanvasSize = false;
 		
-      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-        
-      } else {
-        canvas.style.width = "375px";
-        canvas.style.height = "812px";
-      }
+      
       loadingBar.style.display = "block";
 
       var script = document.createElement("script");
