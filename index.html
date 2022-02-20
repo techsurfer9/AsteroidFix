@@ -53,8 +53,13 @@
       // config.matchWebGLToCanvasSize = false;
 		
       
-		canvas.style.width = "100%";
-      canvas.style.height = "100%";
+	  var screenWidht = document.innerWidth;
+	  var screenHeight = document.innerHeight;
+	  
+	  
+	  
+	  canvas.style.width = screenHeight +"px";
+      canvas.style.height = screenWidht + "px";
       loadingBar.style.display = "block";
 
       var script = document.createElement("script");
